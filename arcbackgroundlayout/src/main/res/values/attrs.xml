@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ArcBackgroundLayout">
+        <attr name="canvas_Color" format="color" />
+        <attr name="draw_Color" format="color" />
+        <attr name="drawArcPoint_Portrait" format="float" />
+        <attr name="drawArcPoint_Landscape" format="float" />
+        <attr name="curveControlPointY_Landscape" format="float" />
+        <attr name="curveControlPointY_Portrait" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="ArcBackgroundView">
+        <attr name="canvasColor" format="color" />
+        <attr name="drawColor" format="color" />
+        <attr name="drawArcPointPortrait" format="float" />
+        <attr name="drawArcPointLandscape" format="float" />
+        <attr name="curveControlPointYLandscape" format="float" />
+        <attr name="curveControlPointYPortrait" format="float" />
+    </declare-styleable>
+
+</resources>
