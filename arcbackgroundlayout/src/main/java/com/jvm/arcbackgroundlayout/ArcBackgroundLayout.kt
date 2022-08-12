@@ -10,8 +10,8 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.widget.FrameLayout
 
-class ArcBackgroundLayout : FrameLayout {
-
+class ArcBackgroundLayout(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
+    FrameLayout(context, attrs, defStyleAttr) {
     private val paint = Paint()
     private val path = Path()
 
@@ -25,27 +25,17 @@ class ArcBackgroundLayout : FrameLayout {
     private var curveControlPointYPortrait = 3f
     private var curveControlPointYLandscape = 2f
 
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    ) {
-        init(attrs, defStyleAttr)
-    }
-
-    constructor(
-        context: Context,
-        attrs: AttributeSet?,
-        defStyleAttr: Int,
-        defStyleRes: Int
-    ) : super(context, attrs, defStyleAttr, defStyleRes)
-
-    private fun init(attrs: AttributeSet?, defStyleAttr: Int) {
+    init {
         paint.isAntiAlias = true
         getAttrs(attrs, defStyleAttr)
     }
+
+    internal constructor(context: Context) : this(context, attrs = null, defStyleAttr = 0)
+    internal constructor(context: Context, attrs: AttributeSet?) : this(
+        context,
+        attrs,
+        defStyleAttr = 0
+    )
 
     private fun getAttrs(attrs: AttributeSet?, defStyle: Int) {
         val typedArray =

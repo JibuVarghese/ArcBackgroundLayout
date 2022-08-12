@@ -10,7 +10,7 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 
-class ArcBackgroundView(context: Context, attrs: AttributeSet, defStyleAttr: Int = 0) :
+class ArcBackgroundView(context: Context, attrs: AttributeSet?, defStyleAttr: Int = 0) :
     View(context, attrs, defStyleAttr) {
     private val paint = Paint()
     private val path = Path()
@@ -25,10 +25,18 @@ class ArcBackgroundView(context: Context, attrs: AttributeSet, defStyleAttr: Int
     private var curveControlPointYPortrait = 3f
     private var curveControlPointYLandscape = 2f
 
+
     init {
         paint.isAntiAlias = true
         getAttrs(attrs, defStyleAttr)
     }
+
+    internal constructor(context: Context) : this(context, attrs = null, defStyleAttr = 0)
+    internal constructor(context: Context, attrs: AttributeSet?) : this(
+        context,
+        attrs,
+        defStyleAttr = 0
+    )
 
     private fun getAttrs(attrs: AttributeSet?, defStyle: Int) {
         val typedArray =
