@@ -8,6 +8,7 @@
     <!--Some background for containers, #onDraw() would not be
     called otherwise. You should not worry about the black color as it won't show-->
     <com.jvm.arcbackgroundlayout.ArcBackgroundLayout
+        android:id="@+id/arcLyt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
