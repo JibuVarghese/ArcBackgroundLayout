@@ -37,6 +37,20 @@ class ArcBackgroundLayout(context: Context, attrs: AttributeSet?, defStyleAttr: 
         defStyleAttr = 0
     )
 
+    /**
+     * use this carefully
+     * only works in onCreate
+     * **/
+    fun setDrawArcPointPortrait(point : Float){
+        drawArcPointPortrait = point
+        this.invalidate()
+    }
+
+    fun setCurveControlPointYPortrait(point : Float){
+        curveControlPointYPortrait = point
+        this.invalidate()
+    }
+
     private fun getAttrs(attrs: AttributeSet?, defStyle: Int) {
         val typedArray =
             context.obtainStyledAttributes(attrs, R.styleable.ArcBackgroundLayout, defStyle, 0)
